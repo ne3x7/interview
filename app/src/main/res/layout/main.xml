@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.ne3x7.interview.SplitView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:splitview="http://schemas.android.com/apk/res/com.ne3x7.interview"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/split_view"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    splitview:handle="@+id/handle"
+    splitview:primaryContent="@+id/top_fragment_container"
+    splitview:secondaryContent="@+id/bottom_fragment_container">
+
+    <FrameLayout
+        android:id="@+id/top_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <fragment
+            android:id="@+id/top_fragment"
+            android:name="com.ne3x7.interview.views.TopFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/top_fragment"
+            />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/handle"
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@drawable/handle" />
+
+    <FrameLayout
+        android:id="@+id/bottom_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <fragment
+            android:id="@+id/bottom_fragment"
+            android:name="com.ne3x7.interview.views.BottomFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/bottom_fragment" />
+    </FrameLayout>
+
+</com.ne3x7.interview.SplitView>
